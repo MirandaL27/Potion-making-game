@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Musical Potion-Making Game</title>
+</head>
+<body class="bg-dark">
+    <header class="container bg-primary mw-100 p-4">
+        <div class="row align-items-center justify-content-between ">
+            <h1 class="col-12 col-md-8">Musical Potion-Making Game</h1>
+            <h2><a class="col-12 col-md-4 text-light" href="#">Intervals and Chords</a></h2>
+        </div>
+    </header>
+
+    <main>
+        <h2 class="text-light p-2">Create Potions and Chords</h2>
+        <div class="bg-primary m-4 p-2">
+            <h3>Directions:</h3>
+            <ul>
+                <li>
+                    Drag the ingredients from the column on the left into the cauldron on the right.
+                </li>
+                <li>
+                    Click on an ingredient to hear its pitch.
+                </li>
+                <li>
+                    The row above the cauldron tells you which ingredients have already been added.
+                </li>
+                <li>
+                    Click the reset button to start over.
+                </li>
+                <li>
+                    Click the play button to hear the chord created by your potion.
+                </li>
+                <li>
+                    Click the mix button to create your potion and recieve your potion's score.
+                </li>
+            </ul>
+        </div>
+
+        <div class="container mw-100">
+            <div class="row justify-content-between ">
+                <div class="col-12 col-md-2 bg-primary p-2 overflow-auto vh-100">
+                    <div class="row justify-content-center">
+                        <h3 class="col-12">Ingredients:</h3>
+                    <div class="card col-3 col-md-10 m-2 text-center">
+                        <h4 class="card-header" >Honeycap</h4>
+                        <img class="w-50" src="assets/images/honeycap.png">
+                    </div>
+                    <div class="card col-3 col-md-10 m-2">
+                        <h4 class="card-header" >Inky Cap</h4>
+                        <img class="w-50" src="assets/images/inkycap.png">
+                    </div>
+                    <div class="card col-3 col-md-10 m-2">
+                        <h4 class="card-header" >Orange Crown</h4>
+                        <img class="w-50" src="assets/images/orangecrown.png">
+                    </div>
+                    <div class="card col-3 col-md-10 m-2">
+                        <h4 class="card-header" >Rondobello</h4>
+                        <img class="w-50" src="assets/images/rondobello.png">
+                    </div>
+                    <div class="card col-3 col-md-10 m-2">
+                        <h4 class="card-header" >Scarlet Flytrap</h4>
+                        <img class="w-50" src="assets/images/scarletflytrap.png">
+                    </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-9">
+                    <!-- <h2>Cauldron:</h2> -->
+                    <div class="row justify-content-end bg-primary">
+                        <h3 class="col-12 text-right">Current Ingredients:</h3>
+                        <!-- <div class="card m-2">
+                            <h4 class="card-header" >ingredient 1</h4>
+                        </div>
+                        <div class="card m-2">
+                            <h4 class="card-header" >ingredient 2</h4>
+                        </div>
+                        <div class="card m-2">
+                            <h4 class="card-header" >ingredient 3</h4>
+                        </div> -->
+                    </div>
+                    <img class="w-100 mt-3" src="assets/images/cauldronbackground.png">
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="./assets/js/script.js"></script>
+</body>
+</html>
