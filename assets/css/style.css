@@ -3,3 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.cauldron-drop{
+    height: 350px;
+    top:200px;
+    left:220px;
+}
