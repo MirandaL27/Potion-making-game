@@ -14,7 +14,7 @@ $(".ing-div").draggable({
     helper: "clone",
     appendTo: "body",
     start : function(event,ui){
-        event.target.style.backgroundColor = null;
+        //event.target.style.backgroundColor = null;
     },
 
 });
