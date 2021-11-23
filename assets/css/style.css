@@ -9,3 +9,7 @@
     top:200px;
     left:220px;
 }
+
+.ing-card:hover{
+    background-color: rgb(242, 240, 184);
+}
