@@ -1,11 +1,62 @@
-var ingredients = ["honeycap","inkycap", "orangecrown" , "rondobello", "scarletflytrap"];
+class ingredient{
+    name;
+    frequency;
+    pitchName;
+    constructor(n, f, p){
+        this.name = n;
+        this.frequency = f;
+        this.pitchName = p;
+    }
+}
+
+var ingredients = [new ingredient("Honeycap",261.6,"C"),new ingredient("Inky Cap",277.2,"C#"), new ingredient("Orange Crown", 311.1,"D#"), new ingredient("Rondobello",370,"F#"), new ingredient("Scarlet Flytrap",493.9,"B")];
 var currentIngredients = [];
 var ingredientCounter = 0;
 var bodyEl = $("body");
+//var pitchFrequencies = [261.6, 277.2, 293.7, 311.1, 329.6,349.2, 370, 392, 415.3, 440, 466.2, 493.9];
 
-var getIngredientName = function(src){
+
+
+class audio{
+    context;
+    osc; 
+    pitchArray = [];
+    setup(){
+        //create audio context and oscillator and connect the ocsillator so that it can be played.
+        this.context = new AudioContext;
+        this.osc = this.context.createOscillator();
+        this.osc.type = "sine";
+        this.osc.connect(this.context.destination);
+       return;
+    }
+    populatePitches(row){
+        //fill the pitch array with the frequencies needed to play each note in the row.
+        return;
+    }
+    playPitches(row){
+        this.setup();
+        this.populatePitches(row);
+        //play a series of pitches with the oscillator.
+        for(var i = 0; i < this.pitchArray.length; i++){
+            this.osc.frequency.setValueAtTime(this.pitchArray[i], this.context.currentTime + i);
+            if (i == 0){
+                this.osc.start(); 
+            }
+        }
+        return;
+    }
+}
+
+
+var makeSrcURL = function(name){
+
+}
+
+var getIngredientObject = function(src){
     for(var i = 0; i<ingredients.length;i++){
-        if(src.includes(ingredients[i])){
+        var cStr = (ingredients[i].name).replaceAll(" ","").toLowerCase();
+        console.log(cStr);
+        if(src.includes(cStr)){
             return ingredients[i];
         }
     }
@@ -18,10 +69,7 @@ $(".ing-div").draggable({
         if(ingredientCounter > 2){
             $(".ing-div").draggable({disabled: true});
          }
-        //event.target.style.backgroundColor = null;
-        
     },
-
 });
 
 var disableIngredients = function(){
@@ -38,10 +86,10 @@ $(".cauldron-drop").droppable({
         else if(ingredientCounter > 3){
             return;
         }
-        //ui.draggable.remove();
-        var src = ui.draggable[0].innerHTML.replace("<img class=" +'"' +"ingredient w-50" +'"'+ " src=", "")
-        src = src.replaceAll('"','')
-        src = src.replace('>','');
+        console.log(ui.draggable[0].innerHTML);
+        var src = ui.draggable[0].innerHTML//.replace("<img class=" +'"' +"ingredient w-50" +'"'+ " src=", "")
+        //src = src.replaceAll('"','')
+        //src = src.replace('>','');
         //console.log(src);
         event.target.style.backgroundColor = null;
         //update current ingredients array
@@ -53,11 +101,11 @@ $(".cauldron-drop").droppable({
         innerDiv.attr("class","card m-2 col-2");
         var cardHeader = $("<h4>");
         cardHeader.attr("class","card-header small");
-        cardHeader.text(getIngredientName(src));
-        currentIngredients.push(getIngredientName(src));
+        var obj = getIngredientObject(src)
+        cardHeader.text(obj.name);
+        currentIngredients.push(obj);
         ingredientCounter++;
         var imageDiv = $("<div>");
-        //imgEl.attr("src","assets/images/honeycap.png");
         imgEl.attr("src", src);
         imgEl.attr("style", "width:25%")
 
