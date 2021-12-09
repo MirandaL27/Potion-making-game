@@ -9,6 +9,17 @@ class ingredient{
     }
 }
 
+//TO DO: make function to programmatically generate the list of ingredient elements 
+//TO DO: get oscilator working for listen button in ingredients list
+//TO DO: get listen button for cauldron working
+//TO DO: get clear button working
+//TO DO: get mix button for cauldron working - interval vector function, potion score.
+//TO DO: make modal with potion image and score pop up with see explanation button
+//TO DO: make see explanation screen 
+//TO DO: make intervals and chords screen
+//TO DO: make readme
+
+
 var ingredients = [new ingredient("Honeycap",261.6,"C"),new ingredient("Inky Cap",277.2,"C#"), new ingredient("Orange Crown", 311.1,"D#"), new ingredient("Rondobello",370,"F#"), new ingredient("Scarlet Flytrap",493.9,"B")];
 var currentIngredients = [];
 var ingredientCounter = 0;
