@@ -15,7 +15,7 @@ class ingredient{
 //TO DO: get clear button working
 //TO DO: get mix button for cauldron working - interval vector function, potion score.
 //TO DO: make modal with potion image and score pop up with see explanation button
-//TO DO: make see explanation screen 
+//TO DO: make see explanation screen- picture of chord with point values for intervals. 
 //TO DO: make intervals and chords screen
 //TO DO: make readme
 
