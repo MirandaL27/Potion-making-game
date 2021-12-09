@@ -29,7 +29,8 @@ class audio{
         this.osc.connect(this.context.destination);
        return;
     }
-    populatePitches(row){
+    populatePitches(index){
+        this.pitchArray.push(ingredient.index.frequency)
         //fill the pitch array with the frequencies needed to play each note in the row.
         return;
     }
@@ -49,7 +50,12 @@ class audio{
 
 
 var makeSrcURL = function(name){
+    //get rid of spaces in name, make all lowercase, 
+    //"assets/images/inkycap.png"
 
+    name = name.replaceAll(" ","").toLowerCase();
+    var url = "assets/images/" + name + ".png";
+    return url;
 }
 
 var getIngredientObject = function(src){
@@ -106,7 +112,7 @@ $(".cauldron-drop").droppable({
         currentIngredients.push(obj);
         ingredientCounter++;
         var imageDiv = $("<div>");
-        imgEl.attr("src", src);
+        imgEl.attr("src", makeSrcURL(obj.name));
         imgEl.attr("style", "width:25%")
 
         cardHeader.appendTo(innerDiv);
@@ -126,4 +132,8 @@ $(".cauldron-drop").droppable({
 
 bodyEl.on("mouseout",".ing-card",function(event){
     $(event.target).closest(".ing-card").removeClass("hover")
+});
+
+bodyEl.on("click", ".listen-btn", function(event){
+    console.log("listen button was clicked");
 });
